@@ -1,4 +1,4 @@
-package shop.mtcoding.bank.domain;
+package shop.mtcoding.bank.domain.user;
 
 import lombok.AccessLevel;
 import lombok.Builder;

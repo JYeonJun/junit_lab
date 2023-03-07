@@ -1,4 +1,4 @@
-package shop.mtcoding.bank.domain;
+package shop.mtcoding.bank.domain.transaction;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
