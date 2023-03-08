@@ -15,8 +15,6 @@ import shop.mtcoding.bank.dto.user.JoinRespDto;
 import shop.mtcoding.bank.service.UserService;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
 
 @RequestMapping("/api")
 @RestController
@@ -29,16 +27,6 @@ public class UserController {
     // 회원가입에서는 인증이 필요하면 안 되므로 /api/join으로 url을 설정하도록 한다.
     @PostMapping("/join")
     public ResponseEntity<?> join(@RequestBody @Valid JoinReqDto joinReqDto, BindingResult bindingResult) {
-
-        if (bindingResult.hasErrors()) {
-            Map<String, String> errorMap = new HashMap<>();
-
-            for (FieldError error : bindingResult.getFieldErrors()) {
-                errorMap.put(error.getField(), error.getDefaultMessage());
-            }
-
-            return new ResponseEntity<>(new ResponseDto<>(-1, "유효성 검사 실패", errorMap), HttpStatus.BAD_REQUEST);
-        }
 
         JoinRespDto joinRespDto = userService.회원가입(joinReqDto);
 
