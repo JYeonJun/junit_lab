@@ -6,12 +6,12 @@ import shop.mtcoding.bank.domain.user.User;
 
 @Getter
 @Setter
-public class UserRespDto {
+public class JoinRespDto {
     private Long id;
     private String username;
     private String fullname;
 
-    public UserRespDto(User user) {
+    public JoinRespDto(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.fullname = user.getFullname();

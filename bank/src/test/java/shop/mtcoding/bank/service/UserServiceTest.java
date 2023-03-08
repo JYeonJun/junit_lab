@@ -10,8 +10,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import shop.mtcoding.bank.config.dummy.DummyObject;
 import shop.mtcoding.bank.domain.user.User;
 import shop.mtcoding.bank.domain.user.UserRepository;
-import shop.mtcoding.bank.dto.user.UserReqDto;
-import shop.mtcoding.bank.dto.user.UserRespDto;
+import shop.mtcoding.bank.dto.user.JoinReqDto;
+import shop.mtcoding.bank.dto.user.JoinRespDto;
 import shop.mtcoding.bank.handler.ex.CustomApiException;
 
 import java.util.Optional;
@@ -42,11 +42,11 @@ public class UserServiceTest extends DummyObject {
     public void 회원가입_test() throws Exception {
 
         // given
-        UserReqDto userReqDto = new UserReqDto();
-        userReqDto.setUsername("ssar");
-        userReqDto.setPassword("ssar");
-        userReqDto.setEmail("ssar@nate.com");
-        userReqDto.setFullname("쌀");
+        JoinReqDto joinReqDto = new JoinReqDto();
+        joinReqDto.setUsername("ssar");
+        joinReqDto.setPassword("ssar");
+        joinReqDto.setEmail("ssar@nate.com");
+        joinReqDto.setFullname("쌀");
 
         // stub 1: 가설
         // 가짜 UserRepository에는 메서드가 없으므로 stub을 생성해줘야 한다.
@@ -57,22 +57,22 @@ public class UserServiceTest extends DummyObject {
         when(userRepository.save(any())).thenReturn(ssar);
 
         // when
-        UserRespDto userRespDto = userService.회원가입(userReqDto);
+        JoinRespDto joinRespDto = userService.회원가입(joinReqDto);
 
         // then
-        assertThat(userRespDto.getId()).isEqualTo(1L);
-        assertThat(userRespDto.getUsername()).isEqualTo("ssar");
+        assertThat(joinRespDto.getId()).isEqualTo(1L);
+        assertThat(joinRespDto.getUsername()).isEqualTo("ssar");
     }
 
     @Test
     public void 회원가입_예외_test() throws Exception {
 
         // given
-        UserReqDto userReqDto = new UserReqDto();
-        userReqDto.setUsername("ssar");
-        userReqDto.setPassword("ssar");
-        userReqDto.setEmail("ssar@nate.com");
-        userReqDto.setFullname("쌀");
+        JoinReqDto joinReqDto = new JoinReqDto();
+        joinReqDto.setUsername("ssar");
+        joinReqDto.setPassword("ssar");
+        joinReqDto.setEmail("ssar@nate.com");
+        joinReqDto.setFullname("쌀");
 
         // stub 1: 가설
         // 가짜 UserRepository에는 메서드가 없으므로 stub을 생성해줘야 한다.
@@ -81,7 +81,7 @@ public class UserServiceTest extends DummyObject {
 
         // then
         assertThrows(CustomApiException.class, () -> {
-            userService.회원가입(userReqDto);
+            userService.회원가입(joinReqDto);
         });
     }
 }

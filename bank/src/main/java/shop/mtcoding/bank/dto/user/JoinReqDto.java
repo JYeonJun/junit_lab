@@ -8,7 +8,7 @@ import shop.mtcoding.bank.domain.user.UserEnum;
 
 @Getter
 @Setter
-public class UserReqDto {
+public class JoinReqDto {
 
     // TODO : 유효성 검사
     private String username;
