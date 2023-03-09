@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import shop.mtcoding.bank.config.dummy.DummyObject;
 import shop.mtcoding.bank.domain.user.User;
 import shop.mtcoding.bank.domain.user.UserRepository;
-import shop.mtcoding.bank.dto.user.JoinReqDto;
 import shop.mtcoding.bank.dto.user.JoinRespDto;
 import shop.mtcoding.bank.handler.ex.CustomApiException;
 
@@ -20,6 +19,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static shop.mtcoding.bank.dto.user.UserReqDto.*;
 
 @ExtendWith(MockitoExtension.class) // 스프링 관련 Bean들이 하나도 없는 환경
 public class UserServiceTest extends DummyObject {
