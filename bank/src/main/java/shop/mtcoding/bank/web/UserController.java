@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import shop.mtcoding.bank.dto.ResponseDto;
-import shop.mtcoding.bank.dto.user.JoinRespDto;
 import shop.mtcoding.bank.service.UserService;
 
 import javax.validation.Valid;
 
 import static shop.mtcoding.bank.dto.user.UserReqDto.*;
+import static shop.mtcoding.bank.dto.user.UserRespDto.*;
 
 @RequestMapping("/api")
 @RestController

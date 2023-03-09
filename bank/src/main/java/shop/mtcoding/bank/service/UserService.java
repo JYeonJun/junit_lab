@@ -7,13 +7,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import shop.mtcoding.bank.domain.user.User;
 import shop.mtcoding.bank.domain.user.UserRepository;
-import shop.mtcoding.bank.dto.user.JoinRespDto;
 import shop.mtcoding.bank.handler.ex.CustomApiException;
 
 import javax.transaction.Transactional;
 import java.util.Optional;
 
 import static shop.mtcoding.bank.dto.user.UserReqDto.*;
+import static shop.mtcoding.bank.dto.user.UserRespDto.*;
 
 @Service
 @RequiredArgsConstructor
