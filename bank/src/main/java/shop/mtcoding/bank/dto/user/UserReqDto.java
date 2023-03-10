@@ -14,6 +14,15 @@ public class UserReqDto {
 
     @Getter
     @Setter
+    public static class LoginReqDto {
+
+        // LoginReqDto는 컨트롤러가 아닌 필터에서 처리되므로 Validation 체크를 수행하지 못한다.
+        private String username;
+        private String password;
+    }
+
+    @Getter
+    @Setter
     public static class JoinReqDto {
 
         @Pattern(regexp = "^[a-zA-Z]{2,20}$", message = "영문/숫자 2~20자 이내로 작성해주세요")
